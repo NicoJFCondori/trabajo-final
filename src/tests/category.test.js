@@ -8,8 +8,8 @@ let categoryId
 
 beforeAll(async () => {
   const user = {
-    email: "sergio@gmail.com",
-    password: "sergio1234"
+    email: "nico@gmail.com",
+    password: "nico1234"
   }
 
   const res = await request(app)
@@ -26,7 +26,7 @@ beforeAll(async () => {
 
 test("POST ->'URL_BASE', should return staus code 201 and res.body.name === category.name", async () => { //🔐
   const category = {
-    name: "Tecno"
+    name: "Libros"
   }
   const res = await request(app)
     .post(URL_BASE)

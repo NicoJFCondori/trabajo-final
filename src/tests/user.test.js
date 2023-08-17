@@ -7,8 +7,8 @@ let userId
 
 beforeAll(async () => {
   const user = {
-    email: "sergio@gmail.com",
-    password: "sergio1234"
+    email: "nico@gmail.com",
+    password: "nico1234"
   }
 
   const res = await request(app)
@@ -31,11 +31,11 @@ test("Get -> 'URL_BASE', should return status code 200 and res.body.length === 1
 
 test("POST -> 'URL_BASE', should return status code 201 and res.body.firstName === user.firstName", async () => {
   const user = {
-    firstName: "Erik",
-    lastName: "Salazar",
-    email: "erik@gmail.com",
-    password: "erik1234",
-    phone: "+4312"
+    firstName: "Jose",
+    lastName: "Condori",
+    email: "jose@gmail.com",
+    password: "jose1234",
+    phone: "+4313"
   }
   const res = await request(app)
     .post(URL_BASE)
@@ -50,7 +50,7 @@ test("POST -> 'URL_BASE', should return status code 201 and res.body.firstName =
 
 test("PUT -> 'URL_BASE/:id', should return status code 200 and res.body.firstName === user.firstName", async () => {
   const user = {
-    firstName: "Angel",
+    firstName: "Mario",
   }
 
   const res = await request(app)
@@ -68,8 +68,8 @@ test("PUT -> 'URL_BASE/:id', should return status code 200 and res.body.firstNam
 
 test("POST -> 'URL_BASE/login', should return status code 200 , res.body.email === user.email, and res.body.token to be defined", async () => {
   const user = {
-    email: "erik@gmail.com",
-    password: "erik1234",
+    email: "jose@gmail.com",
+    password: "jose1234",
   }
   const res = await request(app)
     .post(`${URL_BASE}/login`)
@@ -84,7 +84,7 @@ test("POST -> 'URL_BASE/login', should return status code 200 , res.body.email =
 
 test("POST -> 'URL_BASE/login', should return status code 401", async () => {
   const user = {
-    email: "erik@gmail.com",
+    email: "jose@gmail.com",
     password: "invalid password",
   }
   const res = await request(app)
