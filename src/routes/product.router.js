@@ -6,11 +6,11 @@ const routerProduct = express.Router();
 
 routerProduct.route('/')
   .get(getAll)
-  .post(verifyJWT, create);
+  .post(verifyJWT, create); //🔐
 
 routerProduct.route('/:id')
   .get(getOne)
-  .delete(verifyJWT, remove)
-  .put(verifyJWT, update); 
+  .delete(verifyJWT, remove) //🔐
+  .put(verifyJWT, update); //🔐
 
 module.exports = routerProduct;
