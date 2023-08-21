@@ -20,10 +20,6 @@ beforeAll(async () => {
 
 })
 
-//test post
-//test get
-//test delete
-
 test("POST ->'URL_BASE', should return staus code 201 and res.body.name === category.name", async () => { //🔐
   const category = {
     name: "Libros"
