@@ -41,6 +41,7 @@ beforeAll(async () => {
     quantity: 1,
     productId: product.id
   }
+
   await request(app)
     .post('/api/v1/cart')
     .send(bodyCart)
@@ -69,6 +70,8 @@ test("GET -> 'URL_BASE',should return status code 200 res.body.length === 1", as
   expect(res.body[0].userId).toBe(userId)
   expect(res.body[0].product).toBeDefined()
   expect(res.body[0].product.id).toBe(product.id)
+  expect(res.body[0].product.productImgs).toBeDefined()
+  expect(res.body[0].product.productImgs).toHaveLength(0)
 
   await product.destroy()
 })
