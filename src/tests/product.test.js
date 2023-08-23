@@ -133,7 +133,7 @@ test("POST -> 'URL_BASE/:id/images', should return status code 200 and res.body.
 })
 
 
-test("DELET -> 'URL_BASE/:id', should resturn status code 204", async () => {
+test("DELETE -> 'URL_BASE/:id', should resturn status code 204", async () => {
 
   const res = await request(app)
     .delete(`${URL_BASE}/${productId}`)
